@@ -43,13 +43,13 @@ row.innerHTML = '';
 for (let a = 0; a < team.length; a++) {
     const member = team[a];
     const template = `
-    <div class="col-4">
+    <div class="col-4 pt-5">
         <div class="card">
             <div class="cardBody">
                 <div id="cardTop">
-                    <img src="${member.image}" alt="imgMember">
+                    <img class="w-100" src="${member.image}" alt="imgMember">
                 </div>
-                <div id="cardBottom">
+                <div id="cardBottom" class="text-center p-4">
                     <span>${member.firstName}</span> <span>${member.surname}</span>
                     <div>${member.role}</div>
                 </div>
