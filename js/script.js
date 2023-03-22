@@ -1,12 +1,4 @@
-`
-<div class="col">
-<div class="card">
-    <div class="card_body">
-    </div>
-</div>
-</div>
-`
-// creo l'array 'team' che contiene all'interno diversi oggetti
+// creo l'array 'team' che contiene all'interno diversi objects
 const team = [
     {
         firstName: 'Wayne',
@@ -45,6 +37,25 @@ const team = [
         image: 'img/06.jpg'
     },
 ];
-
+// stampo il contenuto dell'array 'team' con un loop for
 const row = document.querySelector('.row');
-let rowContent = '';
+row.innerHTML = '';
+for (let a = 0; a < team.length; a++) {
+    const member = team[a];
+    const template = `
+    <div class="col-4">
+        <div class="card">
+            <div class="cardBody">
+                <div id="cardTop">
+                    <img src="${member.image}" alt="imgMember">
+                </div>
+                <div id="cardBottom">
+                    <span>${member.firstName}</span> <span>${member.surname}</span>
+                    <div>${member.role}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    row.innerHTML += template;
+}
